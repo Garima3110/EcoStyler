@@ -1,24 +1,14 @@
-const jwt = require('jsonwebtoken');
-const User = require('../schemas/user');
+// server/routes/auth.js
+const express = require('express');
+const { signup, signin } = require('../controllers/auth.controller');
 
-exports.protect = async (req, res, next) => {
-    let token;
-    if (
-        req.headers.authorization &&
-        req.headers.authorization.startsWith('Bearer')
-    ) {
-        token = req.headers.authorization.split(' ')[1];
-    }
+const router = express.Router();
 
-    if (!token) {
-        return res.status(401).json({ message: 'Not authorized, no token' });
-    }
+router.post('/signup', signup);
+router.post('/signin', (req, res) => {
+    // Adjust the request body to match the form inputs
+    req.body.emailOrUsername = req.body.username || req.body.email;
+    signin(req, res);
+});
 
-    try {
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        req.user = await User.findById(decoded.id).select('-password');
-        next();
-    } catch (err) {
-        return res.status(401).json({ message: 'Not authorized, token failed' });
-    }
-};
+module.exports = router;

@@ -1,10 +1,11 @@
-// server/routes/manage.js
-const express = require('express');
-const { getProfile } = require('../controllers/manage.controller');
-const { protect } = require('../middleware/auth');
+// // server/routes/manage.js
+// const express = require('express');
+// const router = express.Router();
+// // const { getProfile } = require('../controllers/manage.controller');
+// // const { protect } = require('../middleware/auth');
+// const manageController = require('../controllers/manage.controller');
 
-const router = express.Router();
 
-router.get('/profile', protect, getProfile);
+// router.get('/profile', protect, getProfile);
 
-module.exports = router;
+// module.exports = router;
