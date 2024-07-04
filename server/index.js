@@ -64,14 +64,14 @@ app.post('/api/auth/signin', async (req, res) => {
 });
 
 // Protected route example - homepage.html
-app.get('/homepage.html', (req, res) => {
+app.get('/index.html', (req, res) => {
     const loggedInUser = req.cookies.loggedInUser;
 
     if (!loggedInUser) {
         return res.status(401).json({ message: 'Unauthorized' });
     }
 
-    res.sendFile(path.join(__dirname, '../client', 'homepage.html'));
+    res.sendFile(path.join(__dirname, '../client', 'index.html'));
 });
 
 // Logout route
