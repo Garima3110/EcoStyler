@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoStyler - Create Outfit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>EcoStyler</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalog.html">Catalog</a></li>
+                <li><a href="create.html">Create Outfit</a></li>
+                <li><a href="community.html">Community</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="login.html">Login/Signup</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="create-outfit">
+            <h2>Create Your Outfit</h2>
+            <div class="gallery">
+                <div class="center">
+                <h3>Select Items for Your Outfit</h3>
+                <div class="items">
+                <div class="item" onclick="selectItem('./assets/chicSummerLook.webp', 'Shirt')">
+                    <img src="./assets/chicSummerLook.webp" alt="Item 1">
+                    <p>Shirt</p>
+                </div>
+                <div class="item" onclick="selectItem('./assets/chicSummerLook.webp', 'Pants')">
+                    <img src="./assets/chicSummerLook.webp" alt="Item 2">
+                    <p>Pants</p>
+                </div>
+                <div class="item" onclick="selectItem('./assets/chicSummerLook.webp', 'Shoes')">
+                    <img src="./assets/chicSummerLook.webp" alt="Item 3">
+                    <p>Shoes</p>
+                </div>
+                <div class="item" onclick="selectItem('./assets/chicSummerLook.webp', 'Accessories')">
+                    <img src="./assets/chicSummerLook.webp" alt="Item 4">
+                    <p>Accessories</p>
+                </div>
+                </div>
+                <!-- Add more items as needed -->
+            </div>
+        </div>
+            <button onclick="createOutfit()">Create Outfit</button>
+        </section>
+        <div id="outfitModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Your Outfit</h2>
+                <div id="outfitItems"></div>
+                <form onsubmit="saveOutfit(event)">
+                    <label for="outfit-name">Outfit Name</label>
+                    <input type="text" id="outfit-name" name="outfit-name" required>
+                    <label for="outfit-description">Description</label>
+                    <textarea id="outfit-description" name="outfit-description" required></textarea>
+                    <button type="submit">Save Outfit</button>
+                </form>
+            </div>
+        </div>
+        <div id="successMessage" class="success-message">
+            <div class="success-content">
+                <span class="checkmark">✓</span>
+                <p>Outfit saved successfully!</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 EcoStyler. All rights reserved.</p>
+    </footer>
+    <script src="create.js"></script>
+</body>
+</html>
