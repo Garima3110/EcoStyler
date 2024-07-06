@@ -346,3 +346,11 @@ footer {
     scrollbar-width: thin;
     scrollbar-color: #FF3F6C #F5F5F5;
 }
+.like-btn {
+    transition: transform 0.2s ease-in-out;
+}
+
+.like-btn.liked {
+    transform: scale(1.3);
+    color: red; /* Optional: change the color to indicate like */
+}
