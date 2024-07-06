@@ -130,7 +130,7 @@ h2 {
     margin-bottom: 1em;
 }
 
-.create-outfit, .gallery, .item, .modal, .modal-content, .success-message, .success-content {
+.create-outfit, .gallery, .item, .modal, .success-message, .success-content {
     margin-bottom: 2em;
     display: flex;
     flex-direction: column;
@@ -140,7 +140,7 @@ h2 {
 
 .create-outfit .center{
 display: flex;
-align-items: center;
+/* align-items: center; */
 justify-content: center;
 flex-direction: column;
 }
@@ -186,6 +186,10 @@ flex-direction: column;
     height: 80%;
 }
 
+.item.selected {
+    border: 2px solid #FF3F6C; /* Example border highlight */
+}
+
 button {
     background-color: #FF3F6C;
     color: white;
@@ -212,15 +216,29 @@ button:hover {
     padding-top: 60px;
 }
 
+/* Modal window styling */
 .modal-content {
     background-color: #fefefe;
-    margin: 5% auto; /* 15% from the top and centered */
+    margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-    max-width: 500px;
+    width: 800px;
+    max-width: 80%;
     border-radius: 10px;
     text-align: center;
+}
+
+.modal-content form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content img{
+    width:20%;
+    gap: 10px;
+
 }
 
 .close {
@@ -237,11 +255,13 @@ button:hover {
 }
 #outfitItems {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row; /* Ensures items are in a row */
+    flex-wrap: wrap; /* Allows wrapping to a new line if there's not enough space */
     justify-content: center;
     gap: 10px;
     margin: 20px 0;
 }
+
 #outfitItems .item {
     width: 80px;
     height: 80px;
@@ -250,14 +270,20 @@ button:hover {
 }
 #outfit-name,
 #outfit-description {
-    width: 100%;
+    width: 70%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #E0E0E0;
     border-radius: 5px;
 }
 
-
+.outfit-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
 
 .success-message {
     display: none;
@@ -281,8 +307,9 @@ button:hover {
 }
 
 .checkmark {
-    color: #4CAF50;
+    color:  #E03359;
     font-size: 2em;
+    width: 20px;
     margin-bottom: 10px;
 }
 

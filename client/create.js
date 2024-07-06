@@ -1,62 +1,80 @@
 let selectedItems = [];
 
-function selectItem(image, description) {
-    selectedItems.push({ image, description });
-    alert(`${description} added to your outfit`);
+function selectItem(imageSrc, itemName) {
+    const itemIndex = selectedItems.findIndex(item => item.itemName === itemName);
+
+    if (itemIndex > -1) {
+        // Item already selected, so deselect it
+        selectedItems.splice(itemIndex, 1);
+    } else {
+        // Select new item
+        selectedItems.push({ imageSrc, itemName });
+    }
+
+    console.log('Selected Items:', selectedItems);
+
+    // Update item selection highlighting
+    updateItemSelection(imageSrc, itemName);
+}
+
+function updateItemSelection(imageSrc, itemName) {
+    const item = document.querySelector(`.item[data-name="${itemName}"]`);
+
+    if (selectedItems.find(item => item.itemName === itemName)) {
+        item.classList.add('selected');
+    } else {
+        item.classList.remove('selected');
+    }
 }
 
 function createOutfit() {
     if (selectedItems.length === 0) {
-        alert("Please select items to create an outfit");
+        alert('Please select at least one item for your outfit.');
         return;
     }
-    
-    const modal = document.getElementById("outfitModal");
-    const outfitItems = document.getElementById("outfitItems");
-    
-    outfitItems.innerHTML = "";
+
+    const outfitItemsDiv = document.getElementById('outfitItems');
+    outfitItemsDiv.innerHTML = '';
+
     selectedItems.forEach(item => {
-        const itemElement = document.createElement("div");
-        itemElement.className = "item";
-        itemElement.innerHTML = `
-            <img src="${item.image}" alt="${item.description}">
-            <p>${item.description}</p>
+        const itemDiv = document.createElement('div');
+        itemDiv.classList.add('outfit-item');
+        itemDiv.innerHTML = `
+            <img src="${item.imageSrc}" alt="${item.itemName}">
+            <p>${item.itemName}</p>
         `;
-        outfitItems.appendChild(itemElement);
+        outfitItemsDiv.appendChild(itemDiv);
     });
-    
-    modal.style.display = "block";
+
+    document.getElementById('outfitModal').style.display = 'block';
 }
 
 function closeModal() {
-    const modal = document.getElementById("outfitModal");
-    modal.style.display = "none";
+    document.getElementById('outfitModal').style.display = 'none';
+    selectedItems = [];
 }
 
+function showSuccessMessage() {
+    document.getElementById('successMessage').style.display = 'block';
+    setTimeout(() => {
+        document.getElementById('successMessage').style.display = 'none';
+    }, 2000);
+}
+
+// Dummy function to mimic saving outfit and show success message
 function saveOutfit(event) {
     event.preventDefault();
-    
-    // You can add code here to save the outfit data to your backend
 
-    // Show the success message
-    const successMessage = document.getElementById("successMessage");
-    successMessage.style.display = "block";
+    const outfitName = document.getElementById('outfit-name').value;
+    const outfitDescription = document.getElementById('outfit-description').value;
 
-    // Hide the modal after saving
+    // Mock saving outfit
+    console.log('Outfit saved:', {
+        name: outfitName,
+        description: outfitDescription,
+        items: selectedItems,
+    });
+
     closeModal();
-    
-    // Reset the selected items
-    selectedItems = [];
-
-    // Hide the success message after 3 seconds
-    setTimeout(() => {
-        successMessage.style.display = "none";
-    }, 3000);
-}
-
-window.onclick = function(event) {
-    const modal = document.getElementById("outfitModal");
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
+    showSuccessMessage();
 }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login and Sign Up</title>
     <link rel="stylesheet" href="./login.css">
+    <script src="https://kit.fontawesome.com/5ea91e48b0.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
@@ -16,7 +17,8 @@
             </div>
             <div class="form-group">
                 <label for="login-password">Password:</label>
-                <input type="password" id="login-password" name="password" required>
+                <input type="password" id="login-password" name="password" required />
+                <i class="fa-sharp fa-solid fa-eye toggle-password" data-target="login-password"></i>
             </div>
             <div class="form-group remember-me">
                 <input type="checkbox" id="remember-me" name="remember-me">
@@ -38,12 +40,27 @@
             <div class="form-group">
                 <label for="signup-password">Password:</label>
                 <input type="password" id="signup-password" name="password" required>
+                <i class="fa-sharp fa-solid fa-eye toggle-password" data-target="signup-password"></i>
             </div>
             <button type="submit">Sign Up</button>
             <p>Already have an account? <a href="#" id="show-login">Login</a></p>
         </form>
     </div>
+    <script>
+        document.querySelectorAll('.toggle-password').forEach(toggle => {
+            toggle.addEventListener('click', function () {
+                const targetId = this.getAttribute('data-target');
+                const passwordField = document.getElementById(targetId);
 
+                if (passwordField) {
+                    const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordField.setAttribute('type', type);
+                    this.classList.toggle('fa-eye-slash');
+                    this.classList.toggle('fa-eye');
+                }
+            });
+        });
+    </script>
     <script src="./login.js"></script>
 </body>
 </html>
