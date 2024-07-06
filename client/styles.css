@@ -109,13 +109,12 @@ h2 {
     width: 250px;
     text-align: center;   
     transition: transform 0.2s, box-shadow 0.2s;
-
 }
 
 
 .outfit-card img, .highlight-card img, .community-card img {
     max-width: 100%;
-    height: auto;
+    height: 80%;
 }
 
 
@@ -182,10 +181,9 @@ flex-direction: column;
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 .item img {
     max-width: 100%;
-    height: auto;
+    height: 80%;
 }
 
 button {
