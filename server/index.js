@@ -6,6 +6,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const bcrypt = require('bcrypt');
 const User = require('./schemas/user.js');
+// const outfitRoutes = require('./routes/outfitRoutes');
 
 dotenv.config();
 
@@ -19,8 +20,10 @@ app.use(express.json());
 app.use(cors());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../client')));
+// app.use(outfitRoutes);
 
-// Serve login.html and signup.html directly
+
+// Serve static files directly
 app.get('/login.html', (req, res) => {
     res.sendFile(path.join(__dirname, '../client', 'login.html'));
 });
@@ -28,6 +31,24 @@ app.get('/login.html', (req, res) => {
 app.get('/signup.html', (req, res) => {
     res.sendFile(path.join(__dirname, '../client', 'signup.html'));
 });
+
+app.get('/catalog.html', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client', 'catalog.html'));
+});
+
+app.get('/create.html', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client', 'create.html'));
+});
+
+app.get('/community.html', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client', 'community.html'));
+});
+
+// Use the middleware for the profile route
+app.get('/profile.html', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client', 'profile.html'));
+});
+
 
 // Login route
 app.post('/api/auth/signin', async (req, res) => {
