@@ -1,11 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoStyler - Catalog</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles specific to catalog items */
+        .catalog {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .item {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px;
+            width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .item-images {
+            display: flex;
+            justify-content: center;
+        }
+
+        .item img {
+            height: 150px;
+            width: auto;
+            margin: 5px;
+        }
+
+        .item h3 {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        .item p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .item .actions {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .item .actions button {
+            background-color: #FF3F6C;
+            color: white;
+            border: none;
+            margin: 10px;
+            width: 50%;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .item .actions button:hover {
+            background-color: #fc6487;
+        }
+
+        .item .comments {
+            gap: 15px;
+            font-size: 12px;
+            color: #555;
+            display: flex;
+            font-weight: 700;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .comment-section {
+            display: none;
+            margin-top: 10px;
+        }
+
+        .comment-section textarea {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 5px;
+        }
+
+        .liked {
+            color: red;
+            transition: color 0.5s;
+        }
+        
+    </style>
 </head>
+
 <body>
     <header>
         <h1>EcoStyler</h1>
@@ -25,22 +121,410 @@
             <h2>Browse Our Catalog</h2>
             <div class="items">
                 <!-- Example of a catalog item -->
-                <div class="item">
-                    <img src="./assets/chicSummerLook.webp" alt="Item 1">
-                    <h3>Item 1</h3>
-                    <p>Eco-friendly fabric</p>
+                <div class="item post" data-post-id="1">
+                    <div class="item-images">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 1">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 1">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 1">
+                    </div>
+                    <h3>Summer Breeze</h3>
+                    <p>Uploaded by Jane Doe</p>
+                    <p>A refreshing summer outfit with a light top, floral skirt, and comfortable sandals.</p>
+                    <div class="actions">
+                        <button class="like-btn">Like</button>
+                        <button class="comment-btn">Comment</button>
+                    </div>
+                    <div class="comments">
+                        <p><span class="likes-number">10</span> likes</p>
+                        <p><span class="comments-count">5</span> comments</p>
+                    </div>
+                    <div class="comment-section">
+                        <textarea class="comment-text" rows="3" placeholder="Write a comment..."></textarea>
+                        <button class="submit-comment-btn">Submit</button>
+                    </div>
                 </div>
-                <div class="item">
-                    <img src="assets\winter-outfits-1141.webp" alt="Item 2">
-                    <h3>Item 2</h3>
-                    <p>Sustainable material</p>
+                <div class="item post" data-post-id="2">
+                    <div class="item-images">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 2">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 2">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 2">
+                    </div>
+                    <h3>Casual Comfort</h3>
+                    <p>Uploaded by John Smith</p>
+                    <p>A casual yet stylish combination of a cozy shirt, denim jeans, and sneakers.</p>
+                    <div class="actions">
+                        <button class="like-btn">Like</button>
+                        <button class="comment-btn">Comment</button>
+                    </div>
+                    <div class="comments">
+                        <p><span class="likes-number">15</span> likes</p>
+                        <p><span class="comments-count">8</span> comments</p>
+                    </div>
+                    <div class="comment-section">
+                        <textarea class="comment-text" rows="3" placeholder="Write a comment..."></textarea>
+                        <button class="submit-comment-btn">Submit</button>
+                    </div>
                 </div>
-                <!-- Add more items as needed -->
+                <div class="item post" data-post-id="3">
+                    <div class="item-images">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 3">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 3">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 3">
+                    </div>
+                    <h3>Urban Chic</h3>
+                    <p>Uploaded by Anna Lee</p>
+                    <p>An edgy urban look with a graphic tee, ripped jeans, and ankle boots.</p>
+                    <div class="actions">
+                        <button class="like-btn">Like</button>
+                        <button class="comment-btn">Comment</button>
+                    </div>
+                    <div class="comments">
+                        <p><span class="likes-number">20</span> likes</p>
+                        <p><span class="comments-count">12</span> comments</p>
+                    </div>
+                    <div class="comment-section">
+                        <textarea class="comment-text" rows="3" placeholder="Write a comment..."></textarea>
+                        <button class="submit-comment-btn">Submit</button>
+                    </div>
+                </div>
+                <div class="item post" data-post-id="4">
+                    <div class="item-images">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 4">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 4">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 4">
+                    </div>
+                    <h3>Spring Fling</h3>
+                    <p>Uploaded by Emily Clark</p>
+                    <p>A bright spring outfit with a floral blouse, pleated skirt, and wedges.</p>
+                    <div class="actions">
+                        <button class="like-btn">Like</button>
+                        <button class="comment-btn">Comment</button>
+                    </div>
+                    <div class="comments">
+                        <p><span class="likes-number">25</span> likes</p>
+                        <p><span class="comments-count">14</span> comments</p>
+                    </div>
+                    <div class="comment-section">
+                        <textarea class="comment-text" rows="3" placeholder="Write a comment..."></textarea>
+                        <button class="submit-comment-btn">Submit</button>
+                    </div>
+                </div>
+                <div class="item post" data-post-id="5">
+                    <div class="item-images">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 5">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 5">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 5">
+                    </div>
+                    <h3>Beach Vibes</h3>
+                    <p>Uploaded by Michael Brown</p>
+                    <p>A relaxed beach look with a tank top, denim shorts, and flip-flops.</p>
+                    <div class="actions">
+                        <button class="like-btn">Like</button>
+                        <button class="comment-btn">Comment</button>
+                    </div>
+                    <div class="comments">
+                        <p><span class="likes-number">30</span> likes</p>
+                        <p><span class="comments-count">18</span> comments</p>
+                    </div>
+                    <div class="comment-section">
+                        <textarea class="comment-text" rows="3" placeholder="Write a comment..."></textarea>
+                        <button class="submit-comment-btn">Submit</button>
+                    </div>
+                </div>
+                <div class="item post" data-post-id="6">
+                    <div class="item-images">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 6">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 6">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 6">
+                    </div>
+                    <h3>Night Out</h3>
+                    <p>Uploaded by Sarah Miller</p>
+                    <p>A chic night out outfit with a little black dress, heels, and clutch.</p>
+                    <div class="actions">
+                        <button class="like-btn">Like</button>
+                        <button class="comment-btn">Comment</button>
+                    </div>
+                    <div class="comments">
+                        <p><span class="likes-number">35</span> likes</p>
+                        <p><span class="comments-count">20</span> comments</p>
+                    </div>
+                    <div class="comment-section">
+                        <textarea class="comment-text" rows="3" placeholder="Write a comment..."></textarea>
+                        <button class="submit-comment-btn">Submit</button>
+                    </div>
+                </div>
+                <div class="item post" data-post-id="7">
+                    <div class="item-images">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 7">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 7">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 7">
+                    </div>
+                    <h3>Autumn Elegance</h3>
+                    <p>Uploaded by Olivia Johnson</p>
+                    <p>A stylish autumn outfit with a trench coat, scarf, and ankle boots.</p>
+                    <div class="actions">
+                        <button class="like-btn">Like</button>
+                        <button class="comment-btn">Comment</button>
+                    </div>
+                    <div class="comments">
+                        <p><span class="likes-number">40</span> likes</p>
+                        <p><span class="comments-count">25</span> comments</p>
+                    </div>
+                    <div class="comment-section">
+                        <textarea class="comment-text" rows="3" placeholder="Write a comment..."></textarea>
+                        <button class="submit-comment-btn">Submit</button>
+                    </div>
+                </div>
+                <div class="item post" data-post-id="8">
+                    <div class="item-images">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 8">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 8">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 8">
+                    </div>
+                    <h3>Winter Warmth</h3>
+                    <p>Uploaded by David Lee</p>
+                    <p>A warm winter outfit with a turtleneck, wool pants, and snow boots.</p>
+                    <div class="actions">
+                        <button class="like-btn">Like</button>
+                        <button class="comment-btn">Comment</button>
+                    </div>
+                    <div class="comments">
+                        <p><span class="likes-number">45</span> likes</p>
+                        <p><span class="comments-count">30</span> comments</p>
+                    </div>
+                    <div class="comment-section">
+                        <textarea class="comment-text" rows="3" placeholder="Write a comment..."></textarea>
+                        <button class="submit-comment-btn">Submit</button>
+                    </div>
+                </div>
+                <div class="item post" data-post-id="9">
+                    <div class="item-images">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 9">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 9">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 9">
+                    </div>
+                    <h3>Retro Revival</h3>
+                    <p>Uploaded by Sophia King</p>
+                    <p>A retro-inspired outfit with a polka dot top, A-line skirt, and vintage shoes.</p>
+                    <div class="actions">
+                        <button class="like-btn">Like</button>
+                        <button class="comment-btn">Comment</button>
+                    </div>
+                    <div class="comments">
+                        <p><span class="likes-number">50</span> likes</p>
+                        <p><span class="comments-count">35</span> comments</p>
+                    </div>
+                    <div class="comment-section">
+                        <textarea class="comment-text" rows="3" placeholder="Write a comment..."></textarea>
+                        <button class="submit-comment-btn">Submit</button>
+                    </div>
+                </div>
+                <div class="item post" data-post-id="10">
+                    <div class="item-images">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 10">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 10">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 10">
+                    </div>
+                    <h3>Street Style</h3>
+                    <p>Uploaded by Chris Evans</p>
+                    <p>A trendy street outfit with a bomber jacket, skinny jeans, and high-tops.</p>
+                    <div class="actions">
+                        <button class="like-btn">Like</button>
+                        <button class="comment-btn">Comment</button>
+                    </div>
+                    <div class="comments">
+                        <p><span class="likes-number">55</span> likes</p>
+                        <p><span class="comments-count">40</span> comments</p>
+                    </div>
+                    <div class="comment-section">
+                        <textarea class="comment-text" rows="3" placeholder="Write a comment..."></textarea>
+                        <button class="submit-comment-btn">Submit</button>
+                    </div>
+                </div>
+                <div class="item post" data-post-id="11">
+                    <div class="item-images">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 11">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 11">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 11">
+                    </div>
+                    <h3>Boho Chic</h3>
+                    <p>Uploaded by Emma Roberts</p>
+                    <p>A bohemian look with a flowing blouse, patterned pants, and sandals.</p>
+                    <div class="actions">
+                        <button class="like-btn">Like</button>
+                        <button class="comment-btn">Comment</button>
+                    </div>
+                    <div class="comments">
+                        <p><span class="likes-number">60</span> likes</p>
+                        <p><span class="comments-count">45</span> comments</p>
+                    </div>
+                    <div class="comment-section">
+                        <textarea class="comment-text" rows="3" placeholder="Write a comment..."></textarea>
+                        <button class="submit-comment-btn">Submit</button>
+                    </div>
+                </div>
+                <div class="item post" data-post-id="12">
+                    <div class="item-images">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 12">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 12">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 12">
+                    </div>
+                    <h3>Office Ready</h3>
+                    <p>Uploaded by Liam Johnson</p>
+                    <p>A professional office outfit with a blazer, pencil skirt, and pumps.</p>
+                    <div class="actions">
+                        <button class="like-btn">Like</button>
+                        <button class="comment-btn">Comment</button>
+                    </div>
+                    <div class="comments">
+                        <p><span class="likes-number">65</span> likes</p>
+                        <p><span class="comments-count">50</span> comments</p>
+                    </div>
+                    <div class="comment-section">
+                        <textarea class="comment-text" rows="3" placeholder="Write a comment..."></textarea>
+                        <button class="submit-comment-btn">Submit</button>
+                    </div>
+                </div>
+                <div class="item post" data-post-id="13">
+                    <div class="item-images">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 13">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 13">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 13">
+                    </div>
+                    <h3>Sporty Casual</h3>
+                    <p>Uploaded by Ava Garcia</p>
+                    <p>A sporty casual look with a hoodie, athletic shorts, and sneakers.</p>
+                    <div class="actions">
+                        <button class="like-btn">Like</button>
+                        <button class="comment-btn">Comment</button>
+                    </div>
+                    <div class="comments">
+                        <p><span class="likes-number">70</span> likes</p>
+                        <p><span class="comments-count">55</span> comments</p>
+                    </div>
+                    <div class="comment-section">
+                        <textarea class="comment-text" rows="3" placeholder="Write a comment..."></textarea>
+                        <button class="submit-comment-btn">Submit</button>
+                    </div>
+                </div>
+                <div class="item post" data-post-id="14">
+                    <div class="item-images">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 14">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 14">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 14">
+                    </div>
+                    <h3>Festival Fun</h3>
+                    <p>Uploaded by Noah Martinez</p>
+                    <p>A fun festival outfit with a crop top, fringe shorts, and boots.</p>
+                    <div class="actions">
+                        <button class="like-btn">Like</button>
+                        <button class="comment-btn">Comment</button>
+                    </div>
+                    <div class="comments">
+                        <p><span class="likes-number">75</span> likes</p>
+                        <p><span class="comments-count">60</span> comments</p>
+                    </div>
+                    <div class="comment-section">
+                        <textarea class="comment-text" rows="3" placeholder="Write a comment..."></textarea>
+                        <button class="submit-comment-btn">Submit</button>
+                    </div>
+                </div>
+                <div class="item post" data-post-id="15">
+                    <div class="item-images">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 15">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 15">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 15">
+                    </div>
+                    <h3>Glamorous Night</h3>
+                    <p>Uploaded by Mia Rodriguez</p>
+                    <p>An elegant night outfit with a sequined gown, stilettos, and clutch.</p>
+                    <div class="actions">
+                        <button class="like-btn">Like</button>
+                        <button class="comment-btn">Comment</button>
+                    </div>
+                    <div class="comments">
+                        <p><span class="likes-number">80</span> likes</p>
+                        <p><span class="comments-count">65</span> comments</p>
+                    </div>
+                    <div class="comment-section">
+                        <textarea class="comment-text" rows="3" placeholder="Write a comment..."></textarea>
+                        <button class="submit-comment-btn">Submit</button>
+                    </div>
+                </div>
+                <div class="item post" data-post-id="16">
+                    <div class="item-images">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 16">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 16">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 16">
+                    </div>
+                    <h3>Classic Elegance</h3>
+                    <p>Uploaded by James Davis</p>
+                    <p>A timeless look with a tailored suit, dress shirt, and loafers.</p>
+                    <div class="actions">
+                        <button class="like-btn">Like</button>
+                        <button class="comment-btn">Comment</button>
+                    </div>
+                    <div class="comments">
+                        <p><span class="likes-number">85</span> likes</p>
+                        <p><span class="comments-count">70</span> comments</p>
+                    </div>
+                    <div class="comment-section">
+                        <textarea class="comment-text" rows="3" placeholder="Write a comment..."></textarea>
+                        <button class="submit-comment-btn">Submit</button>
+                    </div>
+                </div>
+                <div class="item post" data-post-id="17">
+                    <div class="item-images">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 17">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 17">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 17">
+                    </div>
+                    <h3>Streetwear Edge</h3>
+                    <p>Uploaded by Isabella Harris</p>
+                    <p>A streetwear look with an oversized hoodie, cargo pants, and sneakers.</p>
+                    <div class="actions">
+                        <button class="like-btn">Like</button>
+                        <button class="comment-btn">Comment</button>
+                    </div>
+                    <div class="comments">
+                        <p><span class="likes-number">90</span> likes</p>
+                        <p><span class="comments-count">75</span> comments</p>
+                    </div>
+                    <div class="comment-section">
+                        <textarea class="comment-text" rows="3" placeholder="Write a comment..."></textarea>
+                        <button class="submit-comment-btn">Submit</button>
+                    </div>
+                </div>
+                <div class="item post" data-post-id="18">
+                    <div class="item-images">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 18">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 18">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 18">
+                    </div>
+                    <h3>Preppy Style</h3>
+                    <p>Uploaded by Jacob Wilson</p>
+                    <p>A preppy look with a polo shirt, khakis, and loafers.</p>
+                    <div class="actions">
+                        <button class="like-btn">Like</button>
+                        <button class="comment-btn">Comment</button>
+                    </div>
+                    <div class="comments">
+                        <p><span class="likes-number">95</span> likes</p>
+                        <p><span class="comments-count">80</span> comments</p>
+                    </div>
+                    <div class="comment-section">
+                        <textarea class="comment-text" rows="3" placeholder="Write a comment..."></textarea>
+                        <button class="submit-comment-btn">Submit</button>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 EcoStyler. All rights reserved.</p>
     </footer>
+    <script src="catalog.js">
+    </script>
 </body>
+
 </html>
