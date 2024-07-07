@@ -1,11 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EcoStyler - Profile</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        main {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile {
+            margin-bottom: 20px;
+        }
+
+        .outfits {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .item {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: auto;
+        }
+
+        .item-images {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .item-images img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+
+        .actions {
+            margin-top: 10px;
+        }
+
+        .actions button {
+            margin-right: 10px;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .actions .edit-btn {
+            background-color: #337ab7;
+        }
+
+        .comments {
+            margin-top: 10px;
+            font-weight: 700;
+            display: flex;
+            gap: 20px;
+            color: #666;
+        }
+
+        .comment-section {
+            margin-top: 10px;
+            display: none;
+            /* Hidden by default */
+        }
+
+        .comment-section textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            resize: vertical;
+        }
+
+        .comment-section button {
+            padding: 5px 10px;
+            background-color: #337ab7;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .points-earned,
+        .sustainable-material {
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .points-earned span,
+        .sustainable-material span {
+            font-weight: bold;
+        }
+
+        .last-edited {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #999;
+        }
+    </style>
 </head>
+
 <body>
     <header>
         <h1>EcoStyler</h1>
@@ -23,25 +134,74 @@
     <main>
         <section class="profile">
             <h2>User Profile</h2>
-            <p>Username: User1</p>
-            <p>Points: 100</p>
+            <p>Username: Garima</p>
+            <p>Total Points earned: <span id="total-points">0</span></p>
             <h3>My Outfits</h3>
             <div class="outfits">
                 <!-- Example of a user's outfit -->
-                <div class="outfit">
-                    <h4>Outfit 1</h4>
-                    <p>Description of the outfit...</p>
+                <div class="item post" data-post-id="21" data-points="75">
+                    <div class="item-images">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 21">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 21">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 21">
+                    </div>
+                    <h3>Spring Blossom</h3>
+                    <p class="description">A refreshing spring look with a floral dress and sandals made from recycled plastic.</p>
+                    <div class="sustainable-material">Sustainable material: <span>Organic cotton</span></div>
+                    <div class="points-earned">Extra points: <span>+20</span></div>
+                    <div class="points-earned">Points earned: 75</div>
+                    <div class="actions">
+                        <button class="like-btn">Like</button>
+                        <button class="comment-btn">Comment</button>
+                        <button class="edit-btn">Edit</button>
+                    </div>
+                    <div class="comments">
+                        <p><span class="likes-number">55</span> likes</p>
+                        <p><span class="comments-count">40</span> comments</p>
+                    </div>
+                    <div class="comment-section">
+                        <textarea class="comment-text" rows="3" placeholder="Write a comment..."></textarea>
+                        <button class="submit-comment-btn">Submit</button>
+                    </div>
+                    <div class="upload-time">Uploaded 1 month ago</div>
+                    <div class="last-edited">Last edited 1 week ago</div>
                 </div>
-                <div class="outfit">
-                    <h4>Outfit 2</h4>
-                    <p>Description of the outfit...</p>
+                
+                <div class="item post" data-post-id="22" data-points="70">
+                    <div class="item-images">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 22">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 22">
+                        <img src="./assets/chicSummerLook.webp" alt="Outfit 22">
+                    </div>
+                    <h3>Summer Vibes</h3>
+                    <p class="description">Casual summer outfit with a tank top, shorts, and flip flops made from recycled rubber.</p>
+                    <div class="sustainable-material">Sustainable material: <span>Bamboo fabric</span></div>
+                    <div class="points-earned">Extra points: <span>+10</span></div>
+                    <div class="points-earned">Points earned: 70</div>
+                    <div class="actions">
+                        <button class="like-btn">Like</button>
+                        <button class="comment-btn">Comment</button>
+                        <button class="edit-btn">Edit</button>
+                    </div>
+                    <div class="comments">
+                        <p><span class="likes-number">60</span> likes</p>
+                        <p><span class="comments-count">45</span> comments</p>
+                    </div>
+                    <div class="comment-section">
+                        <textarea class="comment-text" rows="3" placeholder="Write a comment..."></textarea>
+                        <button class="submit-comment-btn">Submit</button>
+                    </div>
+                    <div class="upload-time">Uploaded 2 weeks ago</div>
+                    <div class="last-edited">Last edited 3 days ago</div>
                 </div>
-                <!-- Add more outfits as needed -->
             </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 EcoStyler. All rights reserved.</p>
     </footer>
+    <script src="profile.js">
+    </script>
 </body>
+
 </html>
