@@ -419,3 +419,31 @@ footer {
 .search-container:hover .tooltip {
     visibility: visible;
 }
+/* Navigation bar */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center; /* Center the navigation links */
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px; /* Add padding to make clickable area larger */
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Light background color on hover */
+}
+
+/* Active link style */
+nav ul li a.active {
+    background-color: rgba(255, 255, 255, 0.3); /* Slightly darker background for active link */
+    border-radius: 5px; /* Rounded corners */
+}
