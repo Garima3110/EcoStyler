@@ -357,6 +357,7 @@ footer {
     color: red; /* Optional: change the color to indicate like */
 }
 .search-container {
+    position: relative;
     margin: 20px auto;
     display: flex;
     justify-content: center;
@@ -385,7 +386,36 @@ footer {
     border-radius: 0 25px 25px 0;
     transition: background-color 0.3s ease;
 }
-
 #searchButton:hover {
     background-color: #ff69b4;
+}
+
+.tooltip {
+    visibility: hidden;
+    background-color: #ff69b4;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%; /* Position above the input */
+    left: 50%;
+    margin-left: -100px; /* Center the tooltip */
+    width: 200px;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* Arrow at the bottom of the tooltip */
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #ff69b4 transparent transparent transparent;
+}
+
+.search-container:hover .tooltip {
+    visibility: visible;
 }
