@@ -77,3 +77,10 @@ function performSearch() {
         resultsContainer.innerHTML = 'Please enter a search query.';
     }
 }
+function followUser(button) {
+    button.style.display = 'none';
+    const followMessage = document.createElement('span');
+    followMessage.textContent = 'Following';
+    followMessage.style.color = '#ff69b4';
+    button.parentElement.insertBefore(followMessage, button.nextSibling);
+}
