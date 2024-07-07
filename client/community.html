@@ -29,9 +29,12 @@
             </div>
             <div class="posts">
                 <div class="post">
-                    <h3>User1's Outfit</h3>
-                    <p>Description of the outfit...</p>
-                    <p class="likes-count">Likes: <span class="likes-number">0</span></p>
+                    <h3>mini_sia</h3>
+                    <div class="image-container">
+                        <img src="assets/107530022.webp" alt="Outfit 1" onclick="openModal('assets/107530022.webp', 'Outfit 1')">
+                    </div>
+                    <p>I created this outfit for my cousin's wedding and kindly give ur reviews on this tell</p>
+                    <p class="likes-count">Likes: <span class="likes-number">405</span></p>
                     <button class="like-btn">Like</button>
                     <button class="comment-btn">Comment</button>
                     <button class="follow-btn" onclick="followUser(this)" data-following="false">Follow</button>
@@ -41,9 +44,12 @@
                   </div>
                 </div>
                 <div class="post">
-                    <h3>User2's Outfit</h3>
-                    <p>Description of the outfit...</p>
-                    <p class="likes-count">Likes: <span class="likes-number">0</span></p>
+                    <h3>xxy_hi</h3>
+                    <div class="image-container">
+                        <img src="assets/04a921337f2e7f6057e13ec6516cc6a0.jpg" alt="assets/04a921337f2e7f6057e13ec6516cc6a0.jpg" onclick="openModal('assets/04a921337f2e7f6057e13ec6516cc6a0.jpg', 'assets/04a921337f2e7f6057e13ec6516cc6a0.jpg')">
+                    </div>
+                    <p>going to hangout with friends</p>
+                    <p class="likes-count">Likes: <span class="likes-number">327</span></p>
                     <button class="like-btn">Like</button>
                     <button class="comment-btn">Comment</button>
                     <button class="follow-btn" onclick="followUser(this)">Follow</button>
@@ -53,9 +59,12 @@
                 </div>
             </div>
                 <div class="post">
-                    <h3>User3's Outfit</h3>
-                    <p>Description of the outfit...</p>
-                    <p class="likes-count">Likes: <span class="likes-number">0</span></p>
+                    <h3>Nitika__2</h3>
+                    <div class="image-container">
+                        <img src="assets/balletcore-aesthetic-outfits-with-tulle-midi-skirt-satin-ballet-style-shoes.webp" alt="Outfit 3" onclick="openModal('assets/balletcore-aesthetic-outfits-with-tulle-midi-skirt-satin-ballet-style-shoes.webp', 'Outfit 3')">
+                    </div>
+                    <p>created this evening look for my date night</p>
+                    <p class="likes-count">Likes: <span class="likes-number">760</span></p>
                     <button class="like-btn">Like</button>
                     <button class="comment-btn">Comment</button>
                     <button class="follow-btn" onclick="followUser(this)">Follow</button>
@@ -71,6 +80,12 @@
     <footer>
         <p>&copy; 2024 EcoStyler. All rights reserved.</p>
     </footer>
+
+     <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
     <script src="community.js"></script>
 </body>
 </html>

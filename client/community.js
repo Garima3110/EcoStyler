@@ -114,3 +114,25 @@ document.querySelectorAll('.like-btn').forEach(button => {
 document.querySelectorAll('.follow-btn').forEach(button => {
     button.addEventListener('click', () => followUser(button));
 });
+// Function to open the modal and display the clicked image
+// Function to open the modal and display the clicked image
+function openModal(imgSrc, imgAlt) {
+    var modal = document.getElementById("myModal");
+    var modalImg = document.getElementById("modalImg");
+
+    modal.style.display = "block";
+    modalImg.src = imgSrc;
+    modalImg.alt = imgAlt;
+}
+
+// Function to close the modal
+function closeModal() {
+    var modal = document.getElementById("myModal");
+    modal.style.display = "none";
+}
+window.onclick = function(event) {
+    var modal = document.getElementById("myModal");
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
