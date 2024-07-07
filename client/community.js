@@ -78,9 +78,39 @@ function performSearch() {
     }
 }
 function followUser(button) {
-    button.style.display = 'none';
-    const followMessage = document.createElement('span');
-    followMessage.textContent = 'Following';
-    followMessage.style.color = '#ff69b4';
-    button.parentElement.insertBefore(followMessage, button.nextSibling);
+    const isFollowing = button.getAttribute('data-following');
+
+    if (isFollowing === 'false') {
+        // Simulate following (you would typically send a request to the server here)
+        console.log('Following user');
+        button.innerText = 'Unfollow';
+        button.setAttribute('data-following', 'true');
+        button.classList.add('following'); // Optionally add a class for styling
+    } else {
+        // Simulate unfollowing (you would typically send a request to the server here)
+        console.log('Unfollowing user');
+        button.innerText = 'Follow';
+        button.setAttribute('data-following', 'false');
+        button.classList.remove('following'); // Remove the 'following' class if present
+    }
 }
+
+// Attach event listeners to all "Comment" buttons
+document.querySelectorAll('.comment-btn').forEach(button => {
+    button.addEventListener('click', toggleCommentSection);
+});
+
+// Attach event listeners to all "Submit" buttons
+document.querySelectorAll('.submit-comment-btn').forEach(button => {
+    button.addEventListener('click', submitComment);
+});
+
+// Attach event listeners to all "Like" buttons
+document.querySelectorAll('.like-btn').forEach(button => {
+    button.addEventListener('click', likePost);
+});
+
+// Attach event listeners to all "Follow" buttons
+document.querySelectorAll('.follow-btn').forEach(button => {
+    button.addEventListener('click', () => followUser(button));
+});
