@@ -356,3 +356,36 @@ footer {
     transform: scale(1.3);
     color: red; /* Optional: change the color to indicate like */
 }
+.search-container {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#searchInput {
+    border: 2px solid #ff69b4;
+    outline: none;
+    padding: 10px;
+    width: 300px;
+    border-radius: 25px 0 0 25px;
+    font-size: 16px;
+}
+
+#searchButton {
+    background-color: #ffb6c1; /* Light Pink */
+    border: 2px solid #ff69b4;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 0 25px 25px 0;
+    transition: background-color 0.3s ease;
+}
+
+#searchButton:hover {
+    background-color: #ff69b4;
+}

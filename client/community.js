@@ -61,3 +61,19 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', likePost);
     });
 });
+function performSearch() {
+    const query = document.getElementById('searchInput').value;
+    const resultsContainer = document.getElementById('searchResults');
+
+    // Clear previous results
+    resultsContainer.innerHTML = '';
+
+    // Perform search logic (this is just a placeholder)
+    // You can replace this with your actual search logic
+    if (query) {
+        resultsContainer.innerHTML = `Results for "${query}":`;
+        // Here you can append actual search results
+    } else {
+        resultsContainer.innerHTML = 'Please enter a search query.';
+    }
+}
