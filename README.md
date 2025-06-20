@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# EcoStyler
-The Ultimate Solution to Fashion Engagement Challenges
-=======
-# 👗 ECOSTYLE – Customized Outfit Creator & Sharing Platform
+# ECOSTYLE – Customized Outfit Creator & Sharing Platform
 
 ECOSTYLE is a full-stack e-commerce web application where users can design custom outfits, share them with the community, and earn points based on interactions. The platform encourages creativity and community engagement while gamifying fashion design.
 
@@ -42,6 +38,3 @@ ECOSTYLE is a full-stack e-commerce web application where users can design custo
 | Styling         | CSS (modular) |
 | Version Control | Git + GitHub |
 | Package Manager | npm |
-
-
->>>>>>> eb77066 (update readme)
