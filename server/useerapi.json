@@ -1,0 +1,149 @@
+{
+    "categories": [
+      {
+        "id": 1,
+        "name": "Men",
+        "products": [
+          {
+            "id": 101,
+            "name": "Men's T-Shirt",
+            "description": "A comfortable cotton t-shirt",
+            "material": "100% Cotton",
+            "price": 19.99,
+            "sizes": ["S", "M", "L", "XL"],
+            "colors": ["red", "blue", "green"],
+            "images": [
+              "images/men/tshirt1.jpg",
+              "images/men/tshirt2.jpg"
+            ],
+            "stock": 150
+          },
+          {
+            "id": 102,
+            "name": "Men's Jeans",
+            "description": "Stylish blue jeans",
+            "material": "Denim",
+            "price": 49.99,
+            "sizes": ["30", "32", "34", "36"],
+            "colors": ["blue", "black"],
+            "images": [
+              "images/men/jeans1.jpg",
+              "images/men/jeans2.jpg"
+            ],
+            "stock": 80
+          },
+          {
+            "id": 103,
+            "name": "Men's Jacket",
+            "description": "Warm and comfortable winter jacket",
+            "material": "Polyester",
+            "price": 99.99,
+            "sizes": ["M", "L", "XL", "XXL"],
+            "colors": ["black", "grey"],
+            "images": [
+              "images/men/jacket1.jpg",
+              "images/men/jacket2.jpg"
+            ],
+            "stock": 60
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Women",
+        "products": [
+          {
+            "id": 201,
+            "name": "Women's Dress",
+            "description": "Elegant evening dress",
+            "material": "Silk",
+            "price": 79.99,
+            "sizes": ["S", "M", "L"],
+            "colors": ["red", "black"],
+            "images": [
+              "images/women/dress1.jpg",
+              "images/women/dress2.jpg"
+            ],
+            "stock": 50
+          },
+          {
+            "id": 202,
+            "name": "Women's Blouse",
+            "description": "Chic summer blouse",
+            "material": "Cotton",
+            "price": 29.99,
+            "sizes": ["S", "M", "L", "XL"],
+            "colors": ["white", "yellow", "pink"],
+            "images": [
+              "images/women/blouse1.jpg",
+              "images/women/blouse2.jpg"
+            ],
+            "stock": 100
+          },
+          {
+            "id": 203,
+            "name": "Women's Skirt",
+            "description": "Casual short skirt",
+            "material": "Linen",
+            "price": 39.99,
+            "sizes": ["S", "M", "L"],
+            "colors": ["blue", "white"],
+            "images": [
+              "images/women/skirt1.jpg",
+              "images/women/skirt2.jpg"
+            ],
+            "stock": 70
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Kids",
+        "products": [
+          {
+            "id": 301,
+            "name": "Kids' T-Shirt",
+            "description": "Fun and colorful t-shirt",
+            "material": "Cotton",
+            "price": 14.99,
+            "sizes": ["XS", "S", "M"],
+            "colors": ["yellow", "pink", "blue"],
+            "images": [
+              "images/kids/tshirt1.jpg",
+              "images/kids/tshirt2.jpg"
+            ],
+            "stock": 100
+          },
+          {
+            "id": 302,
+            "name": "Kids' Shorts",
+            "description": "Comfortable summer shorts",
+            "material": "Cotton",
+            "price": 19.99,
+            "sizes": ["S", "M", "L"],
+            "colors": ["blue", "green"],
+            "images": [
+              "images/kids/shorts1.jpg",
+              "images/kids/shorts2.jpg"
+            ],
+            "stock": 80
+          },
+          {
+            "id": 303,
+            "name": "Kids' Hoodie",
+            "description": "Warm and cozy hoodie",
+            "material": "Fleece",
+            "price": 29.99,
+            "sizes": ["M", "L"],
+            "colors": ["red", "grey"],
+            "images": [
+              "images/kids/hoodie1.jpg",
+              "images/kids/hoodie2.jpg"
+            ],
+            "stock": 60
+          }
+        ]
+      }
+    ]
+  }
+  
